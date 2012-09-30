@@ -8,6 +8,7 @@ my $lastline = undef;
 while( my $line = <> ) {
     chomp( $line );
     $line =~ s/\t/ /go;
+    $line =~ s/\r/ /go;
     if ( $line =~ /\x01/o ) {
         if ( defined $lastline ) {
 	    my @tmp = split( /\x01/, $lastline );
